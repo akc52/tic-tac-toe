@@ -60,7 +60,7 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1); // ensures reseting history if go back to previous move
     const current = history[history.length - 1];
     const squares = current.squares.slice(); // immutable
-
+console.log(calculateWinner(squares), squares[i])
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -142,6 +142,6 @@ function calculateWinner(squares) {
     if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
-    return null;
   }
+  return null;
 }
